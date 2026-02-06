@@ -1,0 +1,46 @@
+body {
+    font-family: sans-serif;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    background-color: #f0f0f0;
+}
+
+h1 {
+    margin-bottom: 2rem;
+}
+
+#recommend-btn {
+    padding: 0.8rem 1.5rem;
+    font-size: 1rem;
+    color: white;
+    background-color: #007BFF;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+    margin-bottom: 2rem;
+}
+
+#recommend-btn:hover {
+    background-color: #0056b3;
+}
+
+#food-container {
+    text-align: center;
+}
+
+#food-container img {
+    max-width: 100%;
+    height: auto;
+    border-radius: 10px;
+    margin-top: 1rem;
+}
+
+#food-container p {
+    font-size: 1.2rem;
+    font-weight: bold;
+    margin-top: 1rem;
+}
