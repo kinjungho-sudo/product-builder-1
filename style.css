@@ -1,6 +1,7 @@
 body {
     font-family: sans-serif;
     display: flex;
+    flex-direction: column; /* Changed to column to stack elements vertically */
     justify-content: center;
     align-items: center;
     min-height: 100vh;
@@ -11,6 +12,17 @@ body {
 .dark-mode {
     background-color: #1a1a1a;
     color: #f0f0f0;
+}
+
+.main-instruction-text {
+    font-size: 1.5rem; /* Make the text larger */
+    text-align: center;
+    margin-bottom: 2rem; /* Add some space below */
+    color: #333; /* Default color for light mode */
+}
+
+.dark-mode .main-instruction-text {
+    color: #f0f0f0; /* Color for dark mode */
 }
 
 .container {
@@ -25,15 +37,6 @@ body {
 .dark-mode .container {
     background-color: #2c2c2c;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.4);
-}
-
-.instruction-text {
-    color: #333;
-    margin-bottom: 1rem;
-}
-
-.dark-mode .instruction-text {
-    color: #f0f0f0;
 }
 
 h1 {
@@ -135,4 +138,5 @@ input:focus + .slider {
 input:checked + .slider:before {
     transform: translateX(26px);
 }
+
 
