@@ -27,6 +27,15 @@ body {
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.4);
 }
 
+.instruction-text {
+    color: #333;
+    margin-bottom: 1rem;
+}
+
+.dark-mode .instruction-text {
+    color: #f0f0f0;
+}
+
 h1 {
     margin-bottom: 1.5rem;
     color: #333;
@@ -126,3 +135,4 @@ input:focus + .slider {
 input:checked + .slider:before {
     transform: translateX(26px);
 }
+
