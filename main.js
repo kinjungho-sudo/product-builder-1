@@ -23,8 +23,7 @@ document.addEventListener('DOMContentLoaded', () => {
         foodName.textContent = recommendedFood;
 
         const foodImage = document.createElement('img');
-        // Using place.dog for placeholder images as per the plan
-        foodImage.src = `https://place.dog/300/300?random=${Date.now()}`; 
+        foodImage.src = `https://source.unsplash.com/300x300/?${recommendedFood}&sig=${Date.now()}`;
 
         const imageCredit = document.createElement('p');
         imageCredit.textContent = 'by 나노바나나';
