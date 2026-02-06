@@ -1,18 +1,19 @@
-
-# Lotto Number Generator
+# Project Blueprint
 
 ## Overview
 
-This is a simple web application that generates random lotto numbers.
+A simple web application that generates and displays lottery numbers. The application features a clean interface with a button to generate new numbers and a display area for the results.
 
-## Features
+## Implemented Features
 
-*   Generates 6 unique random numbers between 1 and 45.
-*   Displays the generated numbers on the screen.
-*   A button to generate new numbers.
+*   **Lotto Number Generation:** Generates 6 unique random numbers between 1 and 45.
+*   **Number Display:** Displays the generated numbers in colored circles.
+*   **Responsive Design:** The layout is centered and should adapt to different screen sizes.
+*   **Dark Mode (Default):**
+    *   The application now defaults to dark mode.
+    *   Added a dark mode toggle switch to the `index.html` file.
+    *   Defined dark mode color variables and styles in `style.css`.
+    *   Implemented the logic in `main.js` to toggle the dark mode class on the body and save the user's preference in `localStorage`.
+    *   Added a console log for debugging the theme switch.
 
-## Plan
-
-1.  **`index.html`**: Create the basic HTML structure with a title, a button, and a container to display the numbers.
-2.  **`main.js`**: Write the JavaScript logic to generate and display the lotto numbers.
-3.  **`style.css`**: Add styles to improve the visual presentation.
+## Current Task: None

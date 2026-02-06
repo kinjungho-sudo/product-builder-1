@@ -1,6 +1,35 @@
 document.addEventListener('DOMContentLoaded', () => {
     const numbersContainer = document.getElementById('numbers');
     const generateBtn = document.getElementById('generate-btn');
+    const themeSwitch = document.getElementById('checkbox');
+
+    // Function to set the theme
+    function setTheme(isDark) {
+        if (isDark) {
+            document.body.classList.add('dark-mode');
+            localStorage.setItem('theme', 'dark');
+            themeSwitch.checked = true;
+            console.log('Dark mode enabled');
+        } else {
+            document.body.classList.remove('dark-mode');
+            localStorage.setItem('theme', 'light');
+            themeSwitch.checked = false;
+            console.log('Dark mode disabled');
+        }
+    }
+
+    // Check for saved theme preference
+    const savedTheme = localStorage.getItem('theme');
+    if (savedTheme === 'light') {
+        setTheme(false);
+    } else {
+        setTheme(true);
+    }
+
+    // Theme switcher event listener
+    themeSwitch.addEventListener('change', () => {
+        setTheme(themeSwitch.checked);
+    });
 
     function generateNumbers() {
         const numbers = new Set();
