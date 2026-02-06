@@ -1,61 +1,39 @@
 document.addEventListener('DOMContentLoaded', () => {
-    const numbersContainer = document.getElementById('numbers');
-    const generateBtn = document.getElementById('generate-btn');
-    const themeSwitch = document.getElementById('checkbox');
+    const recommendBtn = document.getElementById('recommend-btn');
+    const foodContainer = document.getElementById('food-container');
 
-    // Function to set the theme
-    function setTheme(isDark) {
-        if (isDark) {
-            document.body.classList.add('dark-mode');
-            localStorage.setItem('theme', 'dark');
-            themeSwitch.checked = true;
-            console.log('Dark mode enabled');
-        } else {
-            document.body.classList.remove('dark-mode');
-            localStorage.setItem('theme', 'light');
-            themeSwitch.checked = false;
-            console.log('Dark mode disabled');
-        }
-    }
+    const foodItems = [
+        '피자',
+        '치킨',
+        '떡볶이',
+        '짜장면',
+        '김치찌개',
+        '된장찌개',
+        '초밥',
+        '파스타',
+        '햄버거',
+        '라면'
+    ];
 
-    // Check for saved theme preference
-    const savedTheme = localStorage.getItem('theme');
-    if (savedTheme === 'light') {
-        setTheme(false);
-    } else {
-        setTheme(true);
-    }
+    recommendBtn.addEventListener('click', () => {
+        const randomIndex = Math.floor(Math.random() * foodItems.length);
+        const recommendedFood = foodItems[randomIndex];
 
-    // Theme switcher event listener
-    themeSwitch.addEventListener('change', () => {
-        setTheme(themeSwitch.checked);
+        const foodName = document.createElement('p');
+        foodName.textContent = recommendedFood;
+
+        const foodImage = document.createElement('img');
+        // Using place.dog for placeholder images as per the plan
+        foodImage.src = `https://place.dog/300/300?random=${Date.now()}`; 
+
+        const imageCredit = document.createElement('p');
+        imageCredit.textContent = 'by 나노바나나';
+        imageCredit.style.fontSize = '0.8rem';
+        imageCredit.style.color = '#777';
+
+        foodContainer.innerHTML = '';
+        foodContainer.appendChild(foodName);
+        foodContainer.appendChild(foodImage);
+        foodContainer.appendChild(imageCredit);
     });
-
-    function generateNumbers() {
-        const numbers = new Set();
-        while (numbers.size < 6) {
-            const randomNumber = Math.floor(Math.random() * 45) + 1;
-            numbers.add(randomNumber);
-        }
-        displayNumbers(Array.from(numbers));
-    }
-
-    function displayNumber(number) {
-        const circle = document.createElement('div');
-        circle.classList.add('number-circle');
-        circle.textContent = number;
-        numbersContainer.appendChild(circle);
-    }
-
-    function displayNumbers(numbers) {
-        numbersContainer.innerHTML = '';
-        numbers.forEach(number => {
-            displayNumber(number);
-        });
-    }
-
-    generateBtn.addEventListener('click', generateNumbers);
-
-    // Initial generation
-    generateNumbers();
 });
